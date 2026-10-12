@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<ruleset name="Sidebar Editor Bridge">
+	<description>WordPress Coding Standards for the bridge plugin.</description>
+	<file>.</file>
+	<exclude-pattern>*/languages/*</exclude-pattern>
+	<arg name="extensions" value="php"/>
+	<arg value="sp"/>
+	<arg name="colors"/>
+
+	<rule ref="WordPress"/>
+	<rule ref="PHPCompatibilityWP"/>
+	<config name="testVersion" value="7.4-"/>
+	<config name="minimum_wp_version" value="6.0"/>
+
+	<rule ref="WordPress.WP.I18n">
+		<properties>
+			<property name="text_domain" type="array">
+				<element value="sidebar-editor-bridge"/>
+			</property>
+		</properties>
+	</rule>
+	<rule ref="WordPress.NamingConventions.PrefixAllGlobals">
+		<properties>
+			<property name="prefixes" type="array">
+				<element value="SidebarEditorBridge"/>
+				<element value="sidebar_editor_bridge"/>
+			</property>
+		</properties>
+	</rule>
+</ruleset>

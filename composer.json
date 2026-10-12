@@ -1,0 +1,21 @@
+{
+  "name": "shibisty/sidebar-editor-bridge-dev",
+  "description": "Dev tooling for the Sidebar Editor Bridge WordPress plugin (coding standards). Not shipped with the plugin.",
+  "type": "project",
+  "license": "GPL-2.0-or-later",
+  "require-dev": {
+    "wp-coding-standards/wpcs": "^3.2",
+    "phpcompatibility/phpcompatibility-wp": "^2.1",
+    "dealerdirect/phpcodesniffer-composer-installer": "^1.0"
+  },
+  "config": {
+    "allow-plugins": {
+      "dealerdirect/phpcodesniffer-composer-installer": true
+    }
+  },
+  "scripts": {
+    "lint": "phpcs --standard=wp-plugin/sidebar-editor-bridge/.phpcs.xml.dist wp-plugin/sidebar-editor-bridge",
+    "lint:fix": "phpcbf --standard=wp-plugin/sidebar-editor-bridge/.phpcs.xml.dist wp-plugin/sidebar-editor-bridge",
+    "test": "php tests/php/run.php"
+  }
+}
